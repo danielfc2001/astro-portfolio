@@ -10,6 +10,7 @@ import SocialBadge from "../components/SocialBadge.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Projects from "../components/Projects.astro";
 import Skills from "../components/Skills.astro";
+import SkillIcon from "../icons/Skill.astro";
 ---
 
 <Layout
@@ -56,7 +57,7 @@ import Skills from "../components/Skills.astro";
       <h2
         class="text-2xl text-slate-800 dark:text-white/80 font-semibold mb-6 flex flex-row gap-x-2 items-center"
       >
-        <Code width="24" height="24" />Mis Proyectos
+        <Code width="24" height="24" class="me-2" />Mis Proyectos
       </h2>
       <Projects />
     </SectionContainer>
@@ -64,7 +65,7 @@ import Skills from "../components/Skills.astro";
       <h2
         class="text-2xl text-slate-800 dark:text-white/80 font-semibold mb-6 flex flex-row gap-x-2 items-center"
       >
-        <Code width="24" height="24" />Mis Habilidades
+        <SkillIcon width="24" height="24" class="me-2" />Mis Habilidades
       </h2>
       <Skills />
     </SectionContainer>

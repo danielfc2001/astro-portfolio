@@ -2,6 +2,10 @@
 import SunIcon from "../icons/Sun.astro";
 import SystemIcon from "../icons/System.astro";
 import MoonIcon from "../icons/Moon.astro";
+import HomeIcon from "../icons/Home.astro";
+import PersonIcon from "../icons/Person.astro";
+import CodeIcon from "../icons/Code.astro";
+import SkillIcon from "../icons/Skill.astro";
 
 const THEMES = ["Light", "Dark", "System"];
 ---
@@ -16,21 +20,35 @@ const THEMES = ["Light", "Dark", "System"];
   />
   <nav class="flex flex-row gap-x-8 lg:gap-x-10 ms-4 lg:ms-0 opacity-80">
     <a
-      class="text-slate-700 dark:text-white hover:text-sky-700 dark:hover:text-sky-400 transition-all"
-      href="#top">Inicio</a
+      class="flex flex-row items-center text-slate-700 dark:text-white hover:text-sky-700 dark:hover:text-sky-400 transition-all"
+      href="#top"
     >
+      <span><HomeIcon width="20" height="20" class="" /></span>
+      <span class="hidden md:flex items-center ms-1"> Inicio</span>
+    </a>
     <a
-      class="text-slate-700 dark:text-white hover:text-sky-700 dark:hover:text-sky-400 transition-all"
-      href="#about">Sobre mi</a
+      class="flex flex-row items-center text-slate-700 dark:text-white hover:text-sky-700 dark:hover:text-sky-400 transition-all"
+      href="#about"
     >
+      <span><PersonIcon width="20" height="20" class="" /></span>
+      <span class="hidden md:flex items-center ms-1">Sobre mi</span>
+    </a>
     <a
-      class="text-slate-700 dark:text-white hover:text-sky-700 dark:hover:text-sky-400 transition-all"
-      href="#projects">Proyectos</a
+      class="flex flex-row items-center text-slate-700 dark:text-white hover:text-sky-700 dark:hover:text-sky-400 transition-all"
+      href="#projects"
+      aria-label="projects"
     >
+      <span><CodeIcon width="20" height="20" class="" /></span>
+      <span class="hidden md:flex items-center ms-1">Proyectos</span>
+    </a>
     <a
-      class="text-slate-700 dark:text-white hover:text-sky-700 dark:hover:text-sky-400 transition-all"
-      href="#skills">Habilidades</a
+      class="flex flex-row items-center text-slate-700 dark:text-white hover:text-sky-700 dark:hover:text-sky-400 transition-all"
+      href="#skills"
+      aria-label="skills"
     >
+      <span><SkillIcon width="20" height="20" class="" /></span>
+      <span class="hidden md:flex items-center ms-1">Habilidades</span>
+    </a>
     <div class="relative ml-1 mr-1">
       <button
         id="theme-toggle-btn"
