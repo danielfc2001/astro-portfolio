@@ -1,0 +1,72 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import Location from "../components/Location.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+import GitHub from "../icons/GitHub.astro";
+import Mail from "../icons/Mail.astro";
+import Code from "../icons/Code.astro";
+import SocialBadge from "../components/SocialBadge.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Projects from "../components/Projects.astro";
+import Skills from "../components/Skills.astro";
+---
+
+<Layout
+  title="Daniel Fundora Portfolio | Web Developer."
+  description="Soy desarrollador de software desde hace 2 años. Principalmente desarrollo soluciones para la web."
+>
+  <main class="px-4">
+    <SectionContainer class="py-44 pb-24">
+      <h1
+        class="flex text-slate-900 dark:text-white text-2xl lg:text-5xl font-bold flex-row gap-x-4 pb-4"
+      >
+        👋 Hola, soy Daniel.
+        <a
+          href="https://github.com/danielfc2001"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+        >
+          <!-- <Badge>Disponible</Badge> -->
+        </a>
+      </h1>
+      <h2
+        class="text-lg lg:text-xl text-slate-700 dark:text-white opacity-80 text-wrap"
+      >
+        +2 años de experiencia. Desarrollador web FullStack.
+      </h2>
+      <Location>La Habana. Cuba</Location>
+      <ul class="flex flex-wrap my-4 gap-4 lg:gap-10">
+        <SocialBadge to="#">
+          <LinkedIn width="20" height="20" slot="icon" />
+          LinkedIn
+        </SocialBadge>
+        <SocialBadge to="https://github.com/danielfc2001">
+          <GitHub width="20" height="20" slot="icon" />
+          GitHub
+        </SocialBadge>
+        <SocialBadge to="mailto:danielfundorc@gmail.com">
+          <Mail width="20" height="20" slot="icon" />
+          danielfundorc@gmail.com
+        </SocialBadge>
+      </ul>
+    </SectionContainer>
+    <SectionContainer id="projects" class="pb-24">
+      <h2
+        class="text-2xl text-slate-800 dark:text-white/80 font-semibold mb-6 flex flex-row gap-x-2 items-center"
+      >
+        <Code width="24" height="24" />Mis Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+    <SectionContainer id="skills" class="pb-24">
+      <h2
+        class="text-2xl text-slate-800 dark:text-white/80 font-semibold mb-6 flex flex-row gap-x-2 items-center"
+      >
+        <Code width="24" height="24" />Mis Habilidades
+      </h2>
+      <Skills />
+    </SectionContainer>
+  </main>
+</Layout>

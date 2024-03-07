@@ -1,0 +1,59 @@
+---
+import Html from "../icons/Html.astro";
+import Css from "../icons/Css.astro";
+import JavaScript from "../icons/JavaScript.astro";
+import React from "../icons/React.astro";
+import NodeJs from "../icons/NodeJs.astro";
+import MongoDB from "../icons/MongoDB.astro";
+import AstroIcon from "../icons/AstroIcon.astro";
+import ExpressJs from "../icons/ExpressJs.astro";
+
+export const SKILLS = [
+  {
+    title: "html",
+    icon: Html,
+  },
+  {
+    title: "css",
+    icon: Css,
+  },
+  {
+    title: "javascript",
+    icon: JavaScript,
+  },
+  {
+    title: "react",
+    icon: React,
+  },
+  {
+    title: "nodejs",
+    icon: NodeJs,
+  },
+  {
+    title: "mongodb",
+    icon: MongoDB,
+  },
+  {
+    title: "astro",
+    icon: AstroIcon,
+  },
+  {
+    title: "expressjs",
+    icon: ExpressJs,
+  },
+];
+---
+
+<div class="flex flex-wrap justify-center gap-12">
+  {
+    SKILLS.map((skill) => (
+      <span class="cursor-pointer hover:scale-110 hover:drop-shadow-[0_35px_35px_rgba(207,250,254,0.5)] transition">
+        <skill.icon
+          width="50"
+          height="50"
+          class="me-1 text-slate-800 dark:text-white"
+        />
+      </span>
+    ))
+  }
+</div>

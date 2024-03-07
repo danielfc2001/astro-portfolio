@@ -1,0 +1,30 @@
+---
+interface Props {
+  to: string;
+}
+
+const { to } = Astro.props;
+---
+
+<a
+  class="flex
+  flex-row
+  border
+  text-slate-800
+  dark:text-white/80
+  border-slate-800
+  dark:border-white/10
+  bg-white/5
+  rounded-full
+  text-sm
+  py-1
+  px-2
+  hover:scale-110
+  transition"
+  href={to}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <slot name="icon" />
+  <slot />
+</a>

@@ -1,0 +1,125 @@
+---
+import GitHub from "../icons/GitHub.astro";
+import SocialBadge from "./SocialBadge.astro";
+import Demo from "../icons/Demo.astro";
+import Html from "../icons/Html.astro";
+import Css from "../icons/Css.astro";
+import JavaScript from "../icons/JavaScript.astro";
+import React from "../icons/React.astro";
+import NodeJs from "../icons/NodeJs.astro";
+import MongoDB from "../icons/MongoDB.astro";
+import AstroIcon from "../icons/AstroIcon.astro";
+import ExpressJs from "../icons/ExpressJs.astro";
+
+const SKILLS = [
+  {
+    title: "html",
+    icon: Html,
+  },
+  {
+    title: "css",
+    icon: Css,
+  },
+  {
+    title: "javascript",
+    icon: JavaScript,
+  },
+  {
+    title: "react",
+    icon: React,
+  },
+  {
+    title: "nodejs",
+    icon: NodeJs,
+  },
+  {
+    title: "mongodb",
+    icon: MongoDB,
+  },
+  {
+    title: "astro",
+    icon: AstroIcon,
+  },
+  {
+    title: "expressjs",
+    icon: ExpressJs,
+  },
+];
+
+const PROJECTS = [
+  {
+    title: "SwiftUrl. Url Shortener App.",
+    description:
+      "Solución fullstack de un acortador de enlaces. Página web creada con React y API con Nodejs y Express",
+    demo: "https://swifturl.onrender.com",
+    code: "https://github.com/danielfc2001/url-shortener-web-app",
+    image: "https://danielfc2001.github.io/assets/project_swifturl.png",
+    tags: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "NodeJs",
+      "React",
+      "ExpressJs",
+      "MongoDB",
+    ],
+  },
+];
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map((project) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              src={project.image}
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-slate-800 dark:text-gray-100">
+            {project.title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-wrap mb-2 gap-2">
+              {project.tags.map((tag) => (
+                <li>
+                  <span class="flex flex-row items-center justify-center gap-x-2 border border-white/40 rounded-full text-xs bg-black text-white py-1 px-2 ">
+                    {SKILLS.map(
+                      (skill: any) =>
+                        skill.title === tag.toLocaleLowerCase() && (
+                          <skill.icon width="16" height="16" class="" />
+                        )
+                    )}
+                    {tag}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <div class="mt-2 text-slate-600 dark:text-gray-400">
+              {project.description}
+            </div>
+          </div>
+          <div class="flex items-end justify-start mt-4 gap-x-4">
+            {project.code && (
+              <SocialBadge to={project.code}>
+                <GitHub width="20" height="20" />
+                GitHub
+              </SocialBadge>
+            )}
+            {project.demo && (
+              <SocialBadge to={project.demo}>
+                <Demo width="20" height="20" />
+                Demo
+              </SocialBadge>
+            )}
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>
